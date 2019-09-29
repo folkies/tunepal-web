@@ -47,11 +47,15 @@ gulp.task('build:dist', function (cb) {
 
 // Build and serve the output from the dist build
 gulp.task('serve:dist', ['build:dist'], function () {
-  browserSync({
+  browserSync.init({
     notify: false,
+    startPath: '/tunepal/',
     server: {
       baseDir: ['www'],
-      middleware: [apiProxy]      
+      middleware: [apiProxy],
+      routes: {
+        '/tunepal': 'www',
+      }      
     }
   });
 });

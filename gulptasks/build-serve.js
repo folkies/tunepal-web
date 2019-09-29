@@ -22,11 +22,19 @@ gulp.task('build', function (cb) {
 
 // Watch files for changes & reload
 gulp.task('serve', ['build'], function () {
-  browserSync({
-    notify: false,
+  browserSync.init({
+    notify: true,
+    startPath: '/tunepal/',
     server: {
-      baseDir: ['.tmp', 'app'],
-      middleware: [apiProxy]      
+      baseDir: ['.tmp', 'app'],      
+      logLevel: 'debug',
+      middleware: [apiProxy],
+      routes: {
+        '/tunepal/styles': '.tmp/styles',
+        '/tunepal/lib': '.tmp/lib',
+        '/tunepal/scripts': '.tmp/scripts',
+        '/tunepal': '.',
+      }      
     }
   });
 
