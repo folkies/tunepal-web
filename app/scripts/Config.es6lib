@@ -19,7 +19,7 @@ class _Config {
     this.ApiDomain = '/tunepal2';
     // this.ApiDomain = 'https://tunepal.org/tunepal2';
     this.EuropeanaApiDomain = 'https://www.europeana.eu/api/v2';
-    this.EuropeanaPortalDomain = 'http://www.europeana.eu/portal/search.html';
+    this.EuropeanaPortalDomain = 'https://www.europeana.eu/portal/search.html';
     this.EuropeanaApiKey = 'QNbCgzoWb';
 
     this.Properties = Properties;
