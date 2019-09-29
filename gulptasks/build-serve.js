@@ -4,7 +4,14 @@ var gulp = require('gulp');
 var $ = require('./gulp-plugins');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
+var proxy = require('http-proxy-middleware');
 var reload = browserSync.reload;
+
+var apiProxy = proxy('/tunepal2/**', {
+  target: 'https://tunepal.org/',
+  changeOrigin: true,
+  logLevel: 'debug'
+});
 
 gulp.task('build', function (cb) {
   runSequence(
@@ -18,7 +25,8 @@ gulp.task('serve', ['build'], function () {
   browserSync({
     notify: false,
     server: {
-      baseDir: ['.tmp', 'app']
+      baseDir: ['.tmp', 'app'],
+      middleware: [apiProxy]      
     }
   });
 
