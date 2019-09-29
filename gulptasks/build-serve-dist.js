@@ -5,6 +5,15 @@ var $ = require('./gulp-plugins');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 var merge = require('merge-stream');
+var proxy = require('http-proxy-middleware');
+
+var apiProxy = proxy('/tunepal2/**', {
+  target: 'https://tunepal.org/',
+  changeOrigin: true,
+  logLevel: 'debug'
+});
+
+
 
 // Copy files to www
 gulp.task('copy', function () {
@@ -41,7 +50,8 @@ gulp.task('serve:dist', ['build:dist'], function () {
   browserSync({
     notify: false,
     server: {
-      baseDir: ['www']
+      baseDir: ['www'],
+      middleware: [apiProxy]      
     }
   });
 });
