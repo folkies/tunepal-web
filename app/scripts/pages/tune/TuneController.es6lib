@@ -65,11 +65,11 @@ export default class TuneController extends ControllerBase {
     document.title = this.tune.title;
     this.showTune = true;
 
-    this.showEuropeanaLoading = true;
-    this.europeanaPortalUrl = EuropeanaApi.getPortalUrl(this.tune);
+    // this.showEuropeanaLoading = true;
+    // this.europeanaPortalUrl = EuropeanaApi.getPortalUrl(this.tune);
 
-    EuropeanaApi.searchFetchAsync(this.$http, this.tune, this.$sce, 1, 5)
-    .then(results => this._initEuropeanaResults(results));
+    // EuropeanaApi.searchFetchAsync(this.$http, this.tune, this.$sce, 1, 5)
+    // .then(results => this._initEuropeanaResults(results));
   }
 
   _initEuropeanaResults(results) {
