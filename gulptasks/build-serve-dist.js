@@ -18,19 +18,19 @@ var apiProxy = proxy('/tunepal2/**', {
 // Copy files to www
 gulp.task('copy', function () {
   var assets = gulp.src(['app/assets/**/*'])
-    .pipe(gulp.dest('www/assets'));
+    .pipe(gulp.dest('www/tunepal/assets'));
 
   var fonts = gulp.src(['app/fonts/**/*'])
-    .pipe(gulp.dest('www/fonts'));
+    .pipe(gulp.dest('www/tunepal/fonts'));
 
   var images = gulp.src(['app/images/**/*'])
-    .pipe(gulp.dest('www/images'));
+    .pipe(gulp.dest('www/tunepal/images'));
 
   var rootFiles = gulp.src(['app/*'])
-    .pipe(gulp.dest('www'));
+    .pipe(gulp.dest('www/tunepal'));
 
   var tmpFiles = gulp.src(['.tmp/**/*'])
-    .pipe(gulp.dest('www'));
+    .pipe(gulp.dest('www/tunepal'));
 
   return merge(assets, fonts, images, rootFiles, tmpFiles)
     .pipe($.size({title: 'copy'}));
@@ -52,10 +52,7 @@ gulp.task('serve:dist', ['build:dist'], function () {
     startPath: '/tunepal/',
     server: {
       baseDir: ['www'],
-      middleware: [apiProxy],
-      routes: {
-        '/tunepal': 'www',
-      }      
+      middleware: [apiProxy]
     }
   });
 });

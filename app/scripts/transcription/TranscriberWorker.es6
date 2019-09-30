@@ -1,8 +1,8 @@
 import Transcriber from './Transcriber.es6lib';
 import Utils from '../utils/Utils.es6lib';
 const ScriptPaths = [
-  '/lib/dsp.js/dsp.js',
-  '/lib/babel/browser-polyfill.js',
+  '/tunepal/lib/dsp.js/dsp.js',
+  '/tunepal/lib/babel/browser-polyfill.js',
 ];
 
 export default class TranscriberWorker {

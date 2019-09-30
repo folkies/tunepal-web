@@ -55,7 +55,7 @@ gulp.task('minify-search', ['get-git-info'], function () {
       spare:true  // do not remove redundant attributes
     })))
     // Output Files
-    .pipe(gulp.dest('www'))
+    .pipe(gulp.dest('www/tunepal'))
     .pipe($.size({title: 'minify-search'}));
 });
 
@@ -65,11 +65,11 @@ gulp.task('minify', ['minify-search'], function () {
 
   var dsp = gulp.src(['app/lib/dsp.js/dsp.js'])
     .pipe($.uglify())
-    .pipe(gulp.dest('www/lib/dsp.js'));
+    .pipe(gulp.dest('www/tunepal/lib/dsp.js'));
 
   var transcriber = gulp.src(['.tmp/scripts/transcription/TranscriberWorker.js'])
     .pipe($.uglify())
-    .pipe(gulp.dest('www/scripts/transcription'));
+    .pipe(gulp.dest('www/tunepal/scripts/transcription'));
 
   return merge(dsp, transcriber)
     .pipe($.size({title: 'minify'}));

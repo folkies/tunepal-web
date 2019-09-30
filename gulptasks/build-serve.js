@@ -33,7 +33,7 @@ gulp.task('serve', ['build'], function () {
         '/tunepal/styles': '.tmp/styles',
         '/tunepal/lib': '.tmp/lib',
         '/tunepal/scripts': '.tmp/scripts',
-        '/tunepal': '.',
+        '/tunepal': 'app',
       }      
     }
   });

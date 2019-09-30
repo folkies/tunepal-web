@@ -1,6 +1,6 @@
 import Config from '../../Config.es6lib';
 import Recorder from './Recorder.es6lib';
-const LogoPath = '/images/recording_logo.png';
+const LogoPath = 'images/recording_logo.png';
 
 export default class Renderer {
   get countdownTime() { return this.config.countdownTime; }
