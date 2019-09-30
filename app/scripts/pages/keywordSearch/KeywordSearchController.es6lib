@@ -84,7 +84,7 @@ export default class KeywordSearchController extends ControllerBase {
       this.pages = this._calcPages(this.tunes, this.pageSize);
       this._initUi();
       this.showResults = true;
-      this._initEuropeana();
+      //this._initEuropeana();
     }
 
     this.showLoading = false;
