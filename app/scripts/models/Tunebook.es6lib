@@ -9,6 +9,6 @@ export default class Tunebook {
   }
 
   get logoUrl() {
-    return `http://tunepal.org/test/tunepal/source_icons/s${this.id}.png`;
+    return `https://tunepal.org/test/tunepal/source_icons/s${this.id}.png`;
   }
 }
